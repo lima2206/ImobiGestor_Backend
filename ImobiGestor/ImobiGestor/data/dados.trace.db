@@ -1,6 +1,0 @@
-2025-03-10 21:10:57.415194-03:00 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM INFORMATION_SCHEMA.COLUMN_PRIVILEGES INFORMATION_SCHEMA[*].COLUMNS"; SQL statement:
-SELECT * FROM INFORMATION_SCHEMA.COLUMN_PRIVILEGES INFORMATION_SCHEMA.COLUMNS [42000-232]
-2025-03-10 21:11:29.381394-03:00 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]PROP_ID"; expected "PREPARE"; SQL statement:
-PROP_ID [42001-232]
