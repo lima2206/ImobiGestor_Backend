@@ -6,7 +6,7 @@ import br.spricigo.ImobiGestor.DTO.InquilinoUpdateDTO;
 import br.spricigo.ImobiGestor.Entity.Inquilino;
 
 public interface InterInquilinoService {
-
+  
   public Inquilino buscarPorId(Long id);
 
   public List<Inquilino> buscarTodos();

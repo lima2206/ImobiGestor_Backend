@@ -26,7 +26,7 @@ public class InquilinoService implements InterInquilinoService {
     if (inquilinoRepository.existsById(id)) {
       inquilinoRepository.deleteById(id);
     } else {
-      throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O Id " + id + " é inválido! Proprietário não existe!");
+      throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O Id " + id + " é inválido! Inquilino não existe!");
     }
   }
 
