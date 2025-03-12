@@ -25,11 +25,8 @@ public class Proprietario {
     @Column(name = "prop_profissao")
     private String profissao;
 
-    @Column(name = "prop_rg")
-    private String rg;
-
-    @Column(name = "prop_cpf") 
-    private String cpf;
+    @Column(name = "prop_documento_pdf_path")
+    private String documentoPDFPath;
 
     @Column(name = "prop_endereco")
     private String endereco;
@@ -40,12 +37,11 @@ public class Proprietario {
     @Column(name = "prop_email")
     private String email;   
 
-    public Proprietario(String nome, String estadoCivil, String profissao, String rg, String cpf, String endereco, String telefone, String email) {
+    public Proprietario(String nome, String estadoCivil, String profissao, String documentoPDFPath, String endereco, String telefone, String email) {
         this.nome = nome;
         this.estadoCivil = estadoCivil;
         this.profissao = profissao;
-        this.rg = rg;
-        this.cpf = cpf;
+        this.documentoPDFPath = documentoPDFPath;
         this.endereco = endereco;
         this.telefone = telefone;
         this.email = email;
@@ -86,22 +82,6 @@ public class Proprietario {
         this.profissao = profissao;
     }
 
-    public String getRg() {
-        return rg;
-    }
-
-    public void setRg(String rg) {
-        this.rg = rg;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
     public String getEndereco() {
         return endereco;
     }
@@ -126,8 +106,12 @@ public class Proprietario {
         this.email = email;
     }
 
+    public String getDocumentoPDFPath() {
+      return documentoPDFPath;
+    }
 
-
-    
+    public void setDocumentoPDFPath(String documentoPDFPath) {
+      this.documentoPDFPath = documentoPDFPath;
+    }
 
 }

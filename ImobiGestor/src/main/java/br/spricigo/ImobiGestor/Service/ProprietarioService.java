@@ -42,8 +42,7 @@ public class ProprietarioService implements InterProprietarioService {
         proprietario.getNome() == null ||
         proprietario.getEstadoCivil() == null ||
         proprietario.getProfissao() == null ||
-        proprietario.getRg() == null ||
-        proprietario.getCpf() == null ||
+        proprietario.getDocumentoPDFPath() == null ||
         proprietario.getEndereco() == null ||
         proprietario.getTelefone() == null ||
         proprietario.getEmail() == null) {
@@ -79,11 +78,8 @@ public class ProprietarioService implements InterProprietarioService {
       if (novoProprietario.getProfissao() != null) {
         proprietario.setProfissao(novoProprietario.getProfissao());
       }
-      if (novoProprietario.getRg() != null) {
-        proprietario.setRg(novoProprietario.getRg());
-      }
-      if (novoProprietario.getCpf() != null) {
-        proprietario.setCpf(novoProprietario.getCpf());
+      if(novoProprietario.getDocumentoPDFPath() != null){
+        proprietario.setDocumentoPDFPath(novoProprietario.getDocumentoPDFPath());
       }
       if (novoProprietario.getEndereco() != null) {
         proprietario.setEndereco(novoProprietario.getEndereco());

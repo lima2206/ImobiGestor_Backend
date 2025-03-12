@@ -10,9 +10,7 @@ public class ProprietarioUpdateDTO {
 
     private String profissao;
 
-    private String rg;
-
-    private String cpf;
+    private String documentoPDFPath;
 
     private String endereco;
 
@@ -45,22 +43,6 @@ public class ProprietarioUpdateDTO {
         this.profissao = profissao;
     }
 
-    public String getRg() {
-        return rg;
-    }
-
-    public void setRg(String rg) {
-        this.rg = rg;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
     public String getEndereco() {
         return endereco;
     }
@@ -83,5 +65,13 @@ public class ProprietarioUpdateDTO {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getDocumentoPDFPath() {
+        return documentoPDFPath;
+    }
+
+    public void setDocumentoPDFPath(String documentoPDFPath) {
+        this.documentoPDFPath = documentoPDFPath;
     }
 }
