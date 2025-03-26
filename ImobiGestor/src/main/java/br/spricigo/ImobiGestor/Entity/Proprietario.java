@@ -8,33 +8,33 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "prop_proprietario")
+@Table(name = "pro_proprietario")
 public class Proprietario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "prop_id")
+    @Column(name = "pro_id")
     private Long id;
 
-    @Column(name = "prop_nome")
+    @Column(name = "pro_nome")
     private String nome;
 
-    @Column(name = "prop_estado_civil")
+    @Column(name = "pro_estado_civil")
     private String estadoCivil;
 
-    @Column(name = "prop_profissao")
+    @Column(name = "pro_profissao")
     private String profissao;
 
-    @Column(name = "prop_documento_pdf_path")
+    @Column(name = "pro_documento_pdf_path")
     private String documentoPDFPath;
 
-    @Column(name = "prop_endereco")
+    @Column(name = "pro_endereco")
     private String endereco;
 
-    @Column(name = "prop_telefone")
+    @Column(name = "pro_telefone")
     private String telefone;
 
-    @Column(name = "prop_email")
+    @Column(name = "pro_email")
     private String email;   
 
     public Proprietario(String nome, String estadoCivil, String profissao, String documentoPDFPath, String endereco, String telefone, String email) {

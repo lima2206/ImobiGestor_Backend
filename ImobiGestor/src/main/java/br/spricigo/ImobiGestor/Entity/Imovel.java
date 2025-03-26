@@ -8,21 +8,21 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "imov_imovel")
+@Table(name = "imv_imovel")
 public class Imovel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "imov_id")
+    @Column(name = "imv_id")
     private Long id;
 
-    @Column(name = "imov_endereco")
+    @Column(name = "imv_endereco")
     private String endereco;
 
-    @Column(name = "imov_descricao")
+    @Column(name = "imv_descricao")
     private String descricao;
 
-    @Column(name = "imov_iptu_pdf_path")
+    @Column(name = "imv_iptu_pdf_path")
     private String iptuPDFPath;
 
     public Imovel(String endereco, String descricao, String iptuPDFPath) {

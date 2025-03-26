@@ -8,42 +8,42 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "fia_fiador")
-public class Fiador {
+@Table(name = "con_conjuge")
+public class Conjuge {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "fia_id")
+  @Column(name = "con_id")
   private Long id;
 
-  @Column(name = "fia_nome")
+  @Column(name = "con_nome")
   private String nome;
 
-  @Column(name = "fia_estado_civil")
+  @Column(name = "con_estado_civil")
   private String estadoCivil;
 
-  @Column(name = "fia_profissao")
+  @Column(name = "con_profissao")
   private String profissao;
 
-  @Column(name = "fia_documento_pdf_path")
+  @Column(name = "con_documento_pdf_path")
   private String documentoPDFPath;
 
-  @Column(name = "fia_endereco")
+  @Column(name = "con_endereco")
   private String endereco;
 
-  @Column(name = "fia_telefone")
+  @Column(name = "con_telefone")
   private String telefone;
 
-  @Column(name = "fia_email")
+  @Column(name = "con_email")
   private String email;
 
-  @Column(name = "fia_comprovante_renda_pdf_path")
+  @Column(name = "con_comprovante_renda_pdf_path")
   private String comprovanteRendaPath;
 
-  @Column(name = "fia_certidao_imovel_pdf_path")
+  @Column(name = "con_certidao_imovel_pdf_path")
   private String certidaoImovelPath;
 
-  public Fiador(String nome, String estadoCivil, String profissao, String documentoPDFPath, String endereco,
+  public Conjuge(String nome, String estadoCivil, String profissao, String documentoPDFPath, String endereco,
       String telefone, String email, String comprovanteRendaPath, String certidaoImovelPath) {
     this.nome = nome;
     this.estadoCivil = estadoCivil;
@@ -56,7 +56,7 @@ public class Fiador {
     this.certidaoImovelPath = certidaoImovelPath;
   }
 
-  public Fiador(){ }
+  public Conjuge(){ }
 
   public Long getId() {
     return id;
@@ -136,3 +136,4 @@ public class Fiador {
 
   
 }
+
