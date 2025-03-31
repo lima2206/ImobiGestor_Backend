@@ -1,10 +1,15 @@
 package br.spricigo.ImobiGestor.Entity;
 
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -35,7 +40,15 @@ public class Proprietario {
     private String telefone;
 
     @Column(name = "pro_email")
-    private String email;   
+    private String email;
+    
+    @ManyToMany
+    @JoinTable(name="proprietario_imovel",
+        joinColumns = {@JoinColumn(name="pro_id")},
+        inverseJoinColumns = {@JoinColumn(name="imv_id")}
+    )
+    private Set<Imovel> imoveis;    
+
 
     public Proprietario(String nome, String estadoCivil, String profissao, String documentoPDFPath, String endereco, String telefone, String email) {
         this.nome = nome;

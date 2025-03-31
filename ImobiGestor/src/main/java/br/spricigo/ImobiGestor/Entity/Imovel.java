@@ -1,10 +1,15 @@
 package br.spricigo.ImobiGestor.Entity;
 
+import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -24,6 +29,11 @@ public class Imovel {
 
     @Column(name = "imv_iptu_pdf_path")
     private String iptuPDFPath;
+
+    @ManyToMany(mappedBy = "imoveis")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private Set<Proprietario> proprietarios;
+
 
     public Imovel(String endereco, String descricao, String iptuPDFPath) {
         this.endereco = endereco;
