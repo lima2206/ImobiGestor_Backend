@@ -9,8 +9,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import br.spricigo.ImobiGestor.DTO.ProprietarioUpdateDTO;
+import br.spricigo.ImobiGestor.Entity.Imovel;
 import br.spricigo.ImobiGestor.Entity.Proprietario;
 import br.spricigo.ImobiGestor.Interface.InterProprietarioService;
+import br.spricigo.ImobiGestor.Repository.ImovelRepository;
 import br.spricigo.ImobiGestor.Repository.ProprietarioRepository;
 import jakarta.transaction.Transactional;
 
@@ -20,13 +22,16 @@ public class ProprietarioService implements InterProprietarioService {
   @Autowired
   private ProprietarioRepository proprietarioRepository;
 
+  @Autowired
+  private ImovelRepository imovelRepository;
+
   @Override
   public Proprietario buscarPorId(Long id) {
     Optional<Proprietario> proprietarioOp = proprietarioRepository.findById(id);
     if (proprietarioOp.isPresent()) {
       return proprietarioOp.get();
     }
-    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O Id " + id +" é inválido ou não foi encontrado!");
+    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O Id " + id + " é inválido ou não foi encontrado!");
   }
 
   @Override
@@ -78,7 +83,7 @@ public class ProprietarioService implements InterProprietarioService {
       if (novoProprietario.getProfissao() != null) {
         proprietario.setProfissao(novoProprietario.getProfissao());
       }
-      if(novoProprietario.getDocumentoPDFPath() != null){
+      if (novoProprietario.getDocumentoPDFPath() != null) {
         proprietario.setDocumentoPDFPath(novoProprietario.getDocumentoPDFPath());
       }
       if (novoProprietario.getEndereco() != null) {
@@ -98,5 +103,38 @@ public class ProprietarioService implements InterProprietarioService {
           "O Id " + id + " é inválido! Proprietário não existe.");
     }
   }
+
+  @Transactional
+  public Proprietario vincularImovel(Long proprietario_id, Long imovel_id) {
+    Optional<Proprietario> proprietarioOp = proprietarioRepository.findById(proprietario_id);
+    Proprietario proprietario;
+    if (proprietarioOp.isPresent()) {
+      proprietario = proprietarioOp.get();
+    }else{
+      throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O Id " + proprietario_id + " é inválido, Proprietário não existe!");
+    }
+    
+    Optional<Imovel> imovelOp = imovelRepository.findById(imovel_id);
+    Imovel imovel;
+    if (imovelOp.isPresent()) {
+      imovel = imovelOp.get();
+    }else{
+      throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O Id " + imovel_id + " é inválido, Imóvel não existe!");
+    }
+
+    proprietario.getImoveis().add(imovel);
+
+    return proprietarioRepository.save(proprietario);
+
+
+    
+
+
+
+
+
+
+  }
+
 
 }

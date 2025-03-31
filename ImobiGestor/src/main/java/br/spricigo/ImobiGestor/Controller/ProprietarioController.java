@@ -54,4 +54,11 @@ public class ProprietarioController implements InterProprietarioService {
         return proprietarioService.criarProprietario(proprietario);
     }
 
+    @PatchMapping(value = "/{pro_id}/imovel/{imv_id}")
+    public Proprietario vincularImovel(
+        @PathVariable("pro_id") Long pro_id,
+        @PathVariable("imv_id") Long imv_id){
+            return proprietarioService.vincularImovel(pro_id, imv_id);
+        }
+
 }

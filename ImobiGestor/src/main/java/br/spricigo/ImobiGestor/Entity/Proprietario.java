@@ -127,4 +127,12 @@ public class Proprietario {
       this.documentoPDFPath = documentoPDFPath;
     }
 
+    public Set<Imovel> getImoveis() {
+        return imoveis;
+    }
+
+    public void setImoveis(Set<Imovel> imoveis) {
+        this.imoveis = imoveis;
+    }
+
 }
